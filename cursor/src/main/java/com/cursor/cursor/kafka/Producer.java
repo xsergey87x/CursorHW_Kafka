@@ -19,7 +19,6 @@ public class Producer<S, S1> {
         this.props.put("acks", "all");
         this.props.put("retries", 0);
         this.props.put("group_id", "test_group");
-        this.props.put("client.id", "Producer");
         this.props.put("enable.auto.commit","true");
         this.props.put("batch.size", 16384);
         this.props.put("linger.ms", 1);
