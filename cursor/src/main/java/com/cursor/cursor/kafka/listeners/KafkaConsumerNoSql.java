@@ -1,4 +1,4 @@
-package com.cursor.cursor.kafka;
+package com.cursor.cursor.kafka.listeners;
 
 import org.springframework.kafka.annotation.KafkaListener;
 
