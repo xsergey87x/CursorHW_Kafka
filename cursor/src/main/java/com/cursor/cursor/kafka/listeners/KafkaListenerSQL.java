@@ -4,8 +4,8 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class KafkaConsumerSQL {
-    @KafkaListener(id = "test_group", topics = "news")
+public class KafkaListenerSQL {
+    @KafkaListener(topics = "fresh-news", groupId = "groupId")
     public void listen(String data) {
         System.out.println(data);
     }
