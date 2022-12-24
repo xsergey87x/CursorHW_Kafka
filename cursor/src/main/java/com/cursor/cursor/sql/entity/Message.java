@@ -1,6 +1,7 @@
 package com.cursor.cursor.sql.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class Message {
 
     @Id
@@ -17,4 +18,7 @@ public class Message {
     private Long id;
     private String message;
 
+    public Message(String message) {
+        this.message = message;
+    }
 }
