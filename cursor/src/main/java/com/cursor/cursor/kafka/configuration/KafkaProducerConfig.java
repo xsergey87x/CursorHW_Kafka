@@ -15,25 +15,24 @@ import java.util.Map;
 @Configuration
 public class KafkaProducerConfig {
 
-@Value("${bootstrap.servers}")
-    private  String bootStrapServer;
+    @Value("${bootstrap.servers}")
+    private String bootStrapServer;
 
-public Map<String, Object> producerConfiguration()
-{
-    Map<String,Object> props = new HashMap<>();
-    props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootStrapServer);
-    props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-    props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-   return props;
-}
+    public Map<String, Object> producerConfiguration() {
+        Map<String, Object> props = new HashMap<>();
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootStrapServer);
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        return props;
+    }
 
-@Bean
-public ProducerFactory<String,String> producerFactory(){
-return new DefaultKafkaProducerFactory<>(producerConfiguration());
-}
+    @Bean
+    public ProducerFactory<String, String> producerFactory() {
+        return new DefaultKafkaProducerFactory<>(producerConfiguration());
+    }
 
-@Bean
-public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String,String> producerFactory) {
-    return new KafkaTemplate<>(producerFactory);
-}
+    @Bean
+    public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> producerFactory) {
+        return new KafkaTemplate<>(producerFactory);
+    }
 }

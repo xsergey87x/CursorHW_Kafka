@@ -7,7 +7,7 @@ import com.cursor.cursor.sql.repository.MessageRepository;
 
 import java.util.List;
 
-public class MessageServiceNoSqlImpl implements MessageServiceNoSql{
+public class MessageServiceNoSqlImpl implements MessageServiceNoSql {
 
     private final MessageMongoRepository messageMongoRepository;
 
@@ -22,7 +22,7 @@ public class MessageServiceNoSqlImpl implements MessageServiceNoSql{
 
     @Override
     public void deleteMessage(MessageMongo message) {
-            messageMongoRepository.delete(message);
+        messageMongoRepository.delete(message);
     }
 
     @Override

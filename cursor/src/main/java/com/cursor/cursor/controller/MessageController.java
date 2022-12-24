@@ -17,8 +17,7 @@ public class MessageController {
     }
 
     @PostMapping(value = "/message")
-    public void publish(@RequestBody String message)
-    {
-      kafkaTemplate.send("fresh-news", "test-news");
+    public void publish(@RequestBody String message) {
+        kafkaTemplate.send("fresh-news", "test-news");
     }
 }

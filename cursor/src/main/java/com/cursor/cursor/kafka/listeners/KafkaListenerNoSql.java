@@ -11,7 +11,7 @@ public class KafkaListenerNoSql {
         this.messageServiceNoSql = messageServiceNoSql;
     }
 
-    private  final MessageServiceNoSql messageServiceNoSql;
+    private final MessageServiceNoSql messageServiceNoSql;
 
     @KafkaListener(topics = "fresh-news", groupId = "groupId")
     public void listen(String data) {

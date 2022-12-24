@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MessageServiceSqlImpl implements MessageServiceSql{
+public class MessageServiceSqlImpl implements MessageServiceSql {
 
     private final MessageRepository messageRepository;
 
@@ -22,7 +22,7 @@ public class MessageServiceSqlImpl implements MessageServiceSql{
 
     @Override
     public void deleteMessage(Message message) {
-              messageRepository.delete(message);
+        messageRepository.delete(message);
     }
 
     @Override
